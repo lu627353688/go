@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 函数的语法:
 func funcName (arg1 type1, arg2 type2) (res1 type1, res2 type2) {
@@ -23,3 +25,28 @@ func funcName (arg1 type1, arg2 type2) (res1 type1, res2 type2) {
 	在全局定义的变量叫全局变量
 
 */
+
+func test(x int, y int) (m int, n int) {
+	m = 2 * (x + y)
+	n = x * y
+	return m, n
+}
+
+func test_args(args ...int) {
+	for index, value := range args {
+		fmt.Println(index, ": ", value)
+	}
+}
+
+func main() {
+	a := 1
+	b := 2
+	fmt.Println(test(a, b)) // 6 2
+	test_args(1, 2, 3, 4)
+	/*
+		0 :  1
+		1 :  2
+		2 :  3
+		3 :  4
+	*/
+}
