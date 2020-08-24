@@ -29,7 +29,7 @@ var mrHong students = students{"mrHong", 18}
 var mrHuang students = students{age: 18, name:"mrHuang"}
 
 方式三:new // 所有属性都会被设置为对应类型的初始值.
-var mrLu students = new(students)
+var mrLu *students = new(students) // 因为 new 返回指针 所有要写 *students
 mrLu.name = "mrLu"
 mrLu.age = 18
 
