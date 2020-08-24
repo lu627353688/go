@@ -10,6 +10,17 @@ import "fmt"
 非安全类型断言: 如果断言失败会触发异常
 返回值 := 变量名.(断言类型)
 
+还有一种情况是断言失败也不会触发异常的情况. switch
+语法: 如果有多种类型会命中的情况下, 并且要求都执行, 可以使用 fallthrough
+switch v := var_name.(type) {
+	case int:
+		xxxx
+	case string:
+		xxxx
+	case float:
+		xxxx
+}
+
 */
 
 type empty_interface interface {
